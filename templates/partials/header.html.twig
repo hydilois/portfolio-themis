@@ -1,0 +1,46 @@
+<!--====== Start Header Section ======-->
+<header class="theme-header transparent-header">
+    <!-- header Navigation -->
+    <div class="header-navigation navigation-style-v1">
+        <div class="nav-overlay"></div>
+        <div class="container-fluid">
+            <div class="primary-menu">
+                <div class="site-branding">
+                    <a href="/" class="brand-logo"><img
+                                src="{{ asset('assets/img/logo-group-themis-deux-ligne.png') }}"
+                                alt="Logo Groupe Themis"></a>
+                </div>
+                <div class="nav-menu">
+                    <!-- Navbar Close -->
+                    <div class="navbar-close"><i class="far fa-times"></i></div>
+                    <!-- Main Menu -->
+                    <nav class="main-menu">
+                        <ul>
+                            <li class="menu-item"><a href="/" class="nav-link {% if active_link is defined and active_link == 'home' %}active{% endif %}">Accueil</a></li>
+                            <li class="menu-item"><a href="{{ path('projects_list') }}" class="nav-link {% if active_link is defined and active_link == 'projects' %}active{% endif %}">Nos Projets</a></li>
+                            <li class="menu-item"><a target="_blank" href="https://www.groupethemis.com/"
+                                                     class="nav-link">Notre site</a></li>
+                            <li class="menu-item"><a target="_blank" href="https://www.ex2.com/" class="nav-link">Hébergements
+                                    et domaines</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="header-right-nav">
+                    <ul>
+                        <li class="bar-item"><a href="#"><img src="{{ asset('assets/images/dot.png') }}" alt="dot"></a>
+                        </li>
+                        <li class="navbar-toggle-btn">
+                            <div class="navbar-toggler">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header>
+<!--====== End Header Section ======-->
