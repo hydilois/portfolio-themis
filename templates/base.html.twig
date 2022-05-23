@@ -1,19 +1,88 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
-
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+        <head>
+            <meta charset="UTF-8">
+            <title>{% block title %}Portfolio Themis{% endblock %}</title>
+            <meta http-equiv="x-ua-compatible" content="ie=edge">
+            <meta name="description" content="Portfolio du Groupe Themis Technologies">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <!--====== Favicon Icon ======-->
+            <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/png">
+            {% block stylesheets %}
+                {{ encore_entry_link_tags('app') }}
+            {% endblock %}
+            <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
+        </head>
+        <body>
+            <!--====== Start Preloader ======-->
+            <div class="preloader">
+                <div class="loader">
+                    <div class="pre-shadow"></div>
+                    <div class="pre-box"></div>
+                </div>
+            </div>
+<!--====== End Preloader ======-->
+<!--====== offcanvas-panel ======-->
+<div class="offcanvas-panel">
+    <div class="panel-overlay"></div>
+    <div class="offcanvas-panel-inner">
+        <div class="panel-logo">
+            <a href="/"><img src="{{ asset('assets/img/logo-group-themis-deux-ligne.png') }}"
+                             alt="Logo Groupe Themis"></a>
+        </div>
+        <div class="about-us">
+            <h5 class="panel-widget-title">A Propos</h5>
+            <p>
+                Présent dans divers pays et fort de 15 ans d’expérience, nous améliorons les performances des
+                entreprises en accompagnant l’adoption des usages digitaux et en construisant des infrastructures à
+                la pointe de la technologie.
+                Le souci au quotidien du Groupe Thémis est de bâtir un véritable partenariat avec nos collaborateurs
+                et avec les clients qui nous font confiance. En effet, par notre organisation et notre taille, nous
+                avons développé un esprit favorisant réactivité, écoute, transparence et une réelle notion de
+                service et d’accompagnement
+            </p>
+        </div>
+        <div class="contact-us">
+            <h5 class="panel-widget-title">Nous contacter</h5>
+            <ul>
+                <li>
+                    <i class="fal fa-map-marker-alt"></i>
+                    1 Rue de Lavoir 85290 Mortagne Sur Sèvre, Nantes, France.
+                </li>
+                <li>
+                    <i class="fal fa-envelope-open"></i>
+                    <a href="mailto:contact@themis-it.com">contact@themis-it.com</a>
+                    <a href="mailto:direction@themis-it.com">direction@themis-it.com</a>
+                </li>
+                <li>
+                    <i class="fal fa-phone"></i>
+                    <a href="tel:(+33) 695 539 484">(+33) 695 539 484</a>
+                    <a href="tel:(+237) 694 289 493">(+237) 694 289 493</a>
+                </li>
+            </ul>
+        </div>
+        <a href="#" class="panel-close"><i class="fal fa-times"></i></a>
+    </div>
+</div><!--====== offcanvas-panel ======-->
+{% include 'partials/header.html.twig' %}
+            {% block body %}{% endblock %}
+{% include 'partials/footer.html.twig' %}
+<!--====== back-to-top ======-->
+<a href="#" class="back-to-top"><i class="far fa-angle-up"></i></a>
+<!--====== Bootstrap js ======-->
+<script src="{{ asset('assets/js/popper/popper.min.js') }}"></script>
+<!--====== Bootstrap js ======-->
+<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+<!--====== Slick js ======-->
+<script src="{{ asset('assets/js/slick.min.js') }}"></script>
+<!--====== Magnific js ======-->
+<script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
+<!--====== Isotope js ======-->
+<script src="{{ asset('assets/js/isotope.min.js') }}"></script>
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
+<script src="{{ asset('assets/js/parallax.min.js') }}" defer></script>
+<script src="{{ asset('assets/js/theme.js') }}" defer></script>
+</body>
 </html>
