@@ -33,6 +33,8 @@ class DefaultController extends AbstractController
      */
     public function detailProject(): Response
     {
-        return $this->render('projects/detail.html.twig');
+        return $this->render('projects/detail.html.twig', [
+            'active_link' => 'projects'
+        ]);
     }
 }
