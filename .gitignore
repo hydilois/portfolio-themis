@@ -24,3 +24,10 @@ yarn-error.log
 /.idea/log
 /.idea/*
 ###< Jetbrains IDE Logs
+
+##> Ignore local uploaded projects images
+/public/uploads/projects/*
+!/public/uploads/projects/.gitkeep
+###< Ignore local uploaded projects images
+
+

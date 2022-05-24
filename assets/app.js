@@ -11,6 +11,4 @@ import './styles/app.css';
 import './bootstrap';
 
 import './vendor/imagesloaded.min'
-import './vendor/jquery.counterup.min'
-import './vendor/nice-select/js/jquery.nice-select.min'
 import './vendor/wow.min'

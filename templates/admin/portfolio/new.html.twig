@@ -1,0 +1,44 @@
+{% extends 'admin/layout.html.twig' %}
+{% block body_id 'admin_post_new' %}
+{% block main %}
+    <h1>Ajouter un projet</h1>
+    {{ form_start(form) }}
+        {{ form_row(form.title) }}
+    <div class="row">
+        <div class="col-md-6">
+            {{ form_row(form.guardImageName) }}
+        </div>
+        <div class="col-md-6">
+            {{ form_row(form.illustrativeImageName) }}
+        </div>
+    </div>
+        {{ form_row(form.summary) }}
+        {{ form_row(form.content) }}
+        {{ form_row(form.tags) }}
+        <button type="submit" class="btn btn-primary">
+            <i class="fa fa-save" aria-hidden="true"></i> Enregistrer
+        </button>
+        {{ form_widget(form.saveAndCreateNew, {label: 'Enregistrer et Nouveau', attr: {class: 'btn btn-success'}}) }}
+        <a href="{{ path('admin_project_index') }}" class="btn btn-default">
+            <i class="fa fa-list-alt" aria-hidden="true"></i> Retour à la liste
+        </a>
+    {{ form_end(form) }}
+{% endblock %}
+
+{% block sidebar %}
+    <div class="avatar-upload">
+        <div class="avatar-preview">
+            <div id="guardImagePreview"
+                 style="background-image: url({{ asset('assets/images/portfolio/img-1.jpg') }});">
+            </div>
+        </div>
+    </div>
+
+    <div class="avatar-upload">
+        <div class="avatar-preview_1">
+            <div id="illustrationImagePreview"
+                 style="background-image: url({{ asset('assets/images/breadcrumb/img-3.jpg') }});">
+            </div>
+        </div>
+    </div>
+{% endblock %}

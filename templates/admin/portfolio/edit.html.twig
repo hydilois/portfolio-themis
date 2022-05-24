@@ -1,0 +1,48 @@
+{% extends 'admin/layout.html.twig' %}
+{% block body_id 'admin_post_edit' %}
+{% block main %}
+    <h1>Modifier un projet</h1>
+    {{ include('admin/portfolio/_form.html.twig', {
+        form: form,
+        button_label: 'Enregistrer',
+        include_back_to_home_link: true,
+    }, with_context = false) }}
+{% endblock %}
+
+{% block sidebar %}
+    <div class="section">
+        <a href="{{ path('admin_project_show', {id: project.id}) }}" class="btn btn-block btn-success">
+            <i class="fa fa-eye" aria-hidden="true"></i> Visualiser
+        </a>
+    </div>
+    <div class="section actions">
+        {{ include('admin/portfolio/_delete_form.html.twig', { project: project }, with_context = false) }}
+    </div>
+    <div class="avatar-upload">
+        <div class="avatar-preview">
+            {% if project.guardImageName %}
+                <div id="guardImagePreview" class="mx-auto"
+                     style="background-image: url('{{ asset('uploads/projects/' ~ project.guardImageName) }}');">
+                </div>
+            {% else %}
+                <div id="guardImagePreview"
+                     style="background-image: url({{ asset('assets/images/portfolio/img-1.jpg') }});">
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="avatar-upload">
+        <div class="avatar-preview_1 mt-4">
+            {% if project.guardImageName %}
+                <div id="illustrationImagePreview" class="mx-auto"
+                     style="background-image: url('{{ asset('uploads/projects/' ~ project.illustrativeImageName) }}');">
+                </div>
+            {% else %}
+                <div id="illustrationImagePreview"
+                     style="background-image: url({{ asset('assets/images/breadcrumb/img-3.jpg') }});">
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
