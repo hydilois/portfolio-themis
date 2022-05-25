@@ -3,19 +3,18 @@
 namespace App\Entity;
 
 use App\Repository\TagRepository;
+use Cocur\Slugify\Slugify;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\String\Slugger\SluggerInterface;
+use JsonSerializable;
 
 /**
  * @ORM\Entity(repositoryClass=TagRepository::class)
  * @ORM\Table(name="pt_tag")
  */
-class Tag implements \JsonSerializable
+class Tag implements JsonSerializable
 {
-
-    private SluggerInterface $slugger;
 
     /**
      * @ORM\Id
@@ -36,7 +35,7 @@ class Tag implements \JsonSerializable
 
     public function getSlug()
     {
-        return  $this->slugger->slug($this->name);
+        return  (new Slugify())->slugify($this->name);
     }
 
     public function __construct()

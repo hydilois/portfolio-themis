@@ -1,3 +1,7 @@
 @import "default.css";
 @import "style.css";
 @import "responsive.css";
+
+#notyf-message {
+    display: none;
+}

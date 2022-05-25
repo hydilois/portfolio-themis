@@ -44,18 +44,16 @@
                     <div class="portfolio-filter-button text-center mb-40 wow fadeInUp">
                         <ul class="filter-btn mb-30">
                             <li data-filter="*" class="active">Tout afficher</li>
-                            <li data-filter=".cat-1">Design</li>
-                            <li data-filter=".cat-2">Branding</li>
-                            <li data-filter=".cat-3">Development</li>
-                            <li data-filter=".cat-4">SEO</li>
-                            <li data-filter=".cat-5">UX/UI Design</li>
+                            {% for tag in tags %}
+                                <li data-filter=".{{ tag.slug }}">{{ tag }}</li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="row portfolio-grid">
                 {% for project in projects %}
-                    <div class="col-lg-4 col-md-6 col-sm-12 cat-1 portfolio-column cat-3">
+                    <div class="col-lg-4 col-md-6 col-sm-12 cat-1 portfolio-column {% for tagSlug in project.tags%}{{ tagSlug.slug }} {% endfor %}">
                         <div class="portfolio-item portfolio-style-one mb-50 wow fadeInUp" data-wow-delay=".10s">
                             <div class="img-holder">
                                 <img src="{{ asset('uploads/projects/' ~ project.guardImageName) }}" alt="Img">
@@ -74,150 +72,6 @@
                         </div>
                     </div>
                 {% endfor %}
-                <div class="col-lg-4 col-md-6 col-sm-12 cat-1 portfolio-column cat-3">
-                    <div class="portfolio-item portfolio-style-one mb-50 wow fadeInUp" data-wow-delay=".10s">
-                        <div class="img-holder">
-                            <img src="assets/images/portfolio/img-1.jpg" alt="Img">
-                            <a href="assets/images/portfolio/img-1.jpg" class="portfolio-hover img-popup">
-                                <div class="hover-content">
-                                    <i class="far fa-plus"></i>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="text">
-                            <h3 class="title"><a href="{{ path('project_detail', {'slug' : 'custom_slug' }) }}">WebPlan Saas</a></h3>
-                            <a href="{{ path('project_detail', {'slug' : 'custom_slug' }) }}" class="cat-link">Application de gestion des entreprise de sécurité</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-column cat-2 cat-4">
-                    <div class="portfolio-item portfolio-style-one mb-50 wow fadeInUp" data-wow-delay=".15s">
-                        <div class="img-holder">
-                            <img src="assets/images/portfolio/img-2.jpg" alt="Img">
-                            <a href="assets/images/portfolio/img-2.jpg" class="portfolio-hover img-popup">
-                                <div class="hover-content">
-                                    <i class="far fa-plus"></i>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="text">
-                            <h3 class="title"><a href="{{ path('project_detail', {'slug' : 'custom_slug' }) }}">Landing Pages</a></h3>
-                            <a href="{{ path('project_detail', {'slug' : 'custom_slug' }) }}" class="cat-link">Creative Design</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-column cat-3 cat-4">
-                    <div class="portfolio-item portfolio-style-one mb-50 wow fadeInUp" data-wow-delay=".20s">
-                        <div class="img-holder">
-                            <img src="assets/images/portfolio/img-3.jpg" alt="Img">
-                            <a href="assets/images/portfolio/img-3.jpg" class="portfolio-hover img-popup">
-                                <div class="hover-content">
-                                    <i class="far fa-plus"></i>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="text">
-                            <h3 class="title"><a href="{{ path('project_detail', {'slug' : 'custom_slug' }) }}">Illustration Design</a></h3>
-                            <a href="{{ path('project_detail', {'slug' : 'custom_slug' }) }}" class="cat-link">Creative Design</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-column cat-4 cat-3">
-                    <div class="portfolio-item portfolio-style-one mb-50 wow fadeInUp" data-wow-delay=".25s">
-                        <div class="img-holder">
-                            <img src="assets/images/portfolio/img-4.jpg" alt="Img">
-                            <a href="assets/images/portfolio/img-4.jpg" class="portfolio-hover img-popup">
-                                <div class="hover-content">
-                                    <i class="far fa-plus"></i>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="text">
-                            <h3 class="title"><a href="{{ path('project_detail', {'slug' : 'custom_slug' }) }}">Dashboard Design</a></h3>
-                            <a href="{{ path('project_detail', {'slug' : 'custom_slug' }) }}" class="cat-link">Creative Design</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-column cat-5 cat-1">
-                    <div class="portfolio-item portfolio-style-one mb-50 wow fadeInUp" data-wow-delay=".30s">
-                        <div class="img-holder">
-                            <img src="assets/images/portfolio/img-5.jpg" alt="Img">
-                            <a href="assets/images/portfolio/img-5.jpg" class="portfolio-hover img-popup">
-                                <div class="hover-content">
-                                    <i class="far fa-plus"></i>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="text">
-                            <h3 class="title"><a href="{{ path('project_detail', {'slug' : 'custom_slug' }) }}">Apps Development</a></h3>
-                            <a href="{{ path('project_detail', {'slug' : 'custom_slug' }) }}" class="cat-link">Creative Design</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-column cat-4 cat-2">
-                    <div class="portfolio-item portfolio-style-one mb-50 wow fadeInUp" data-wow-delay=".35s">
-                        <div class="img-holder">
-                            <img src="assets/images/portfolio/img-6.jpg" alt="Img">
-                            <a href="assets/images/portfolio/img-6.jpg" class="portfolio-hover img-popup">
-                                <div class="hover-content">
-                                    <i class="far fa-plus"></i>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="text">
-                            <h3 class="title"><a href="{{ path('project_detail', {'slug' : 'custom_slug' }) }}">Website Design</a></h3>
-                            <a href="{{ path('project_detail', {'slug' : 'custom_slug' }) }}" class="cat-link">Creative Design</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-column cat-4 cat-3">
-                    <div class="portfolio-item portfolio-style-one mb-50 wow fadeInUp" data-wow-delay=".40s">
-                        <div class="img-holder">
-                            <img src="assets/images/portfolio/img-7.jpg" alt="Img">
-                            <a href="assets/images/portfolio/img-7.jpg" class="portfolio-hover img-popup">
-                                <div class="hover-content">
-                                    <i class="far fa-plus"></i>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="text">
-                            <h3 class="title"><a href="{{ path('project_detail', {'slug' : 'custom_slug' }) }}">Dashboard Design</a></h3>
-                            <a href="{{ path('project_detail', {'slug' : 'custom_slug' }) }}" class="cat-link">Creative Design</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-column cat-5 cat-1">
-                    <div class="portfolio-item portfolio-style-one mb-50 wow fadeInUp" data-wow-delay=".45s">
-                        <div class="img-holder">
-                            <img src="assets/images/portfolio/img-8.jpg" alt="Img">
-                            <a href="assets/images/portfolio/img-8.jpg" class="portfolio-hover img-popup">
-                                <div class="hover-content">
-                                    <i class="far fa-plus"></i>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="text">
-                            <h3 class="title"><a href="{{ path('project_detail', {'slug' : 'custom_slug' }) }}">Apps Development</a></h3>
-                            <a href="{{ path('project_detail', {'slug' : 'custom_slug' }) }}" class="cat-link">Creative Design</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-column cat-4 cat-2">
-                    <div class="portfolio-item portfolio-style-one mb-50 wow fadeInUp" data-wow-delay=".50s">
-                        <div class="img-holder">
-                            <img src="assets/images/portfolio/img-9.jpg" alt="Img">
-                            <a href="assets/images/portfolio/img-9.jpg" class="portfolio-hover img-popup">
-                                <div class="hover-content">
-                                    <i class="far fa-plus"></i>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="text">
-                            <h3 class="title"><a href="{{ path('project_detail', {'slug' : 'custom_slug' }) }}">Website Design</a></h3>
-                            <a href="{{ path('project_detail', {'slug' : 'custom_slug' }) }}" class="cat-link">Creative Design</a>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">

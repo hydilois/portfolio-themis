@@ -55,8 +55,8 @@
                                     <h3 class="title">{{ project }}</h3>
                                     <p class="text-justify">{{ project.summary }}</p>
                                 </div>
-                                <div class="content">
-                                    {{ project.content|markdown_to_html|sanitize_html}}
+                                <div class="content text-justify">
+                                    {{ project.content|markdown_to_html|sanitize_html }}
                                 </div>
                             </div>
                             <div class="col-lg-4">
@@ -64,7 +64,7 @@
                                     <ul>
                                         <li>
                                             <h4>Catégories</h4>
-                                            <p>{% for tag in project.tags  %}
+                                            <p>{% for tag in project.tags %}
                                                     {{ tag }},
                                                 {% endfor %}</p>
                                         </li>
@@ -89,15 +89,26 @@
                 <div class="post-nav-tag pt-80">
                     <div class="row align-items-center">
                         <div class="col-lg-5">
-                            <div class="post-nav-item prev-post">
-                                <div class="thumb">
-                                    <img src="{{ asset('assets/images/portfolio/thumb-1.jpg') }}" alt="">
+                            {% if previous_project %}
+                                <div class="post-nav-item prev-post">
+                                    <div class="thumb">
+                                        <img src="{{ asset('uploads/projects/' ~ previous_project.guardImageName) }}"
+                                             alt="{{ previous_project }}">
+                                    </div>
+                                    <div class="text">
+                                        <h4><a href="{{ path('project_detail', {'slug' : previous_project.slug }) }}">{{ previous_project }}</a></h4>
+                                        <p>
+                                            {% for tag in previous_project.tags %}
+                                                {% if loop.last %}
+                                                    <a href="javascript:void(0)" class="ml-1">{{ tag }}</a>
+                                                {% else %}
+                                                    <a href="javascript:void(0)" class="ml-1">{{ tag }}</a>,
+                                                {% endif %}
+                                            {% endfor %}
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="text">
-                                    <h4><a href="#">Creative Web Design</a></h4>
-                                    <p><a href="#">Design</a>, <a href="#">Agency</a></p>
-                                </div>
-                            </div>
+                            {% endif %}
                         </div>
                         <div class="col-lg-2">
                             <div class="post-icon text-center">
@@ -105,15 +116,25 @@
                             </div>
                         </div>
                         <div class="col-lg-5">
-                            <div class="post-nav-item next-post">
-                                <div class="thumb">
-                                    <img src="{{ asset('assets/images/portfolio/thumb-2.jpg') }}" alt="">
+                            {% if next_project %}
+                                <div class="post-nav-item next-post">
+                                    <div class="thumb">
+                                        <img src="{{ asset('uploads/projects/' ~ next_project.guardImageName) }}" alt="{{ next_project }}">
+                                    </div>
+                                    <div class="text">
+                                        <h4><a href="{{ path('project_detail', {'slug' : next_project.slug }) }}">{{ next_project }}</a></h4>
+                                        <p>
+                                            {% for tag in next_project.tags %}
+                                                {% if loop.last %}
+                                                    <a href="javascript:void(0)" class="ml-1">{{ tag }}</a>
+                                                {% else %}
+                                                    <a href="javascript:void(0)" class="ml-1">{{ tag }}</a>,
+                                                {% endif %}
+                                            {% endfor %}
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="text">
-                                    <h4><a href="#">Creative Web Design</a></h4>
-                                    <p><a href="#">Design</a>, <a href="#">Agency</a></p>
-                                </div>
-                            </div>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

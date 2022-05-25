@@ -4,7 +4,8 @@
       "js": [
         "http://localhost:8080/build/runtime.js",
         "http://localhost:8080/build/vendors-node_modules_webpack-dev-server_client_index_js_protocol_ws_3A_hostname_localhost_por-f86214.js",
-        "http://localhost:8080/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ob-dcdf78.js",
+        "http://localhost:8080/build/vendors-node_modules_core-js_internals_array-iteration_js-node_modules_core-js_internals_dom--abb0a0.js",
+        "http://localhost:8080/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ob-d6a84d.js",
         "http://localhost:8080/build/vendors-node_modules_core-js_modules_es_array_for-each_js-node_modules_core-js_modules_es_arr-24c67c.js",
         "http://localhost:8080/build/app.js"
       ],
@@ -16,8 +17,9 @@
       "js": [
         "http://localhost:8080/build/runtime.js",
         "http://localhost:8080/build/vendors-node_modules_webpack-dev-server_client_index_js_protocol_ws_3A_hostname_localhost_por-f86214.js",
+        "http://localhost:8080/build/vendors-node_modules_core-js_internals_array-iteration_js-node_modules_core-js_internals_dom--abb0a0.js",
         "http://localhost:8080/build/vendors-node_modules_jquery_dist_jquery_js.js",
-        "http://localhost:8080/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ob-dcdf78.js",
+        "http://localhost:8080/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ob-d6a84d.js",
         "http://localhost:8080/build/vendors-node_modules_bootstrap-sass_assets_javascripts_bootstrap_alert_js-node_modules_bootst-8400fa.js",
         "http://localhost:8080/build/admin.js"
       ],
@@ -32,6 +34,18 @@
         "http://localhost:8080/build/vendors-node_modules_webpack-dev-server_client_index_js_protocol_ws_3A_hostname_localhost_por-f86214.js",
         "http://localhost:8080/build/vendors-node_modules_jquery_dist_jquery_js.js",
         "http://localhost:8080/build/login.js"
+      ]
+    },
+    "notyf": {
+      "js": [
+        "http://localhost:8080/build/runtime.js",
+        "http://localhost:8080/build/vendors-node_modules_webpack-dev-server_client_index_js_protocol_ws_3A_hostname_localhost_por-f86214.js",
+        "http://localhost:8080/build/vendors-node_modules_core-js_internals_array-iteration_js-node_modules_core-js_internals_dom--abb0a0.js",
+        "http://localhost:8080/build/vendors-node_modules_core-js_modules_es_array_for-each_js-node_modules_core-js_modules_web_do-e225f3.js",
+        "http://localhost:8080/build/notyf.js"
+      ],
+      "css": [
+        "http://localhost:8080/build/notyf.css"
       ]
     }
   }

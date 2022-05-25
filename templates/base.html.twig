@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="fr">
-        <head>
-            <meta charset="UTF-8">
-            <title>{% block title %}Projets Themis{% endblock %}</title>
-            <meta http-equiv="x-ua-compatible" content="ie=edge">
-            <meta name="description" content="Portfolio du Groupe Themis Technologies">
-            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-            <!--====== Favicon Icon ======-->
-            <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}" type="image/png">
-            {% block stylesheets %}
-                {{ encore_entry_link_tags('app') }}
-            {% endblock %}
-            <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
-        </head>
-        <body>
-            <!--====== Start Preloader ======-->
-            <div class="preloader">
-                <div class="loader">
-                    <div class="pre-shadow"></div>
-                    <div class="pre-box"></div>
-                </div>
-            </div>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Projets Themis{% endblock %}</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="Portfolio du Groupe Themis Technologies">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}" type="image/png">
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+        {{ encore_entry_link_tags('notyf') }}
+    {% endblock %}
+    <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
+</head>
+<body>
+<!--====== Start Preloader ======-->
+<div class="preloader">
+    <div class="loader">
+        <div class="pre-shadow"></div>
+        <div class="pre-box"></div>
+    </div>
+</div>
 <!--====== End Preloader ======-->
 <!--====== offcanvas-panel ======-->
 <div class="offcanvas-panel">
@@ -65,7 +66,8 @@
     </div>
 </div><!--====== offcanvas-panel ======-->
 {% include 'partials/header.html.twig' %}
-            {% block body %}{% endblock %}
+{% include 'partials/_notyf.html.twig' %}
+{% block body %}{% endblock %}
 {% include 'partials/footer.html.twig' %}
 <!--====== back-to-top ======-->
 <a href="#" class="back-to-top"><i class="far fa-angle-up"></i></a>
@@ -83,6 +85,7 @@
 <script src="{{ asset('assets/js/jquery.nice-select.min.js') }}"></script>
 {% block javascripts %}
     {{ encore_entry_script_tags('app') }}
+    {{ encore_entry_script_tags('notyf') }}
 {% endblock %}
 <script src="{{ asset('assets/js/parallax.min.js') }}" defer></script>
 <script src="{{ asset('assets/js/theme.js') }}" defer></script>

@@ -58,10 +58,10 @@
                             <h3>Abonnez-vous à notre newsletter</h3>
                             <p>Restez informé de nos nouveaux produits mis sur le marché et de nos nouvelles
                                 annonces</p>
-                            <form>
+                            <form method="post" action="{{ path('subscribe_newsletter') }}">
                                 <div class="form_group">
                                     <input type="email" class="form_control" placeholder="Adresse email"
-                                           name="email" required>
+                                           name="email" id="email" required>
                                     <button class="main-btn">Souscrire</button>
                                 </div>
                             </form>
@@ -81,8 +81,6 @@
                     <div class="footer-nav float-lg-right">
                         <ul>
                             <li><a target="_blank" href="https://www.groupethemis.com/politique-de-protection-des-donnees-personnelles-du-site-web-du-groupe-themis/">Paramètres & Vie privée </a></li>
-                            <li><a href="#">Faqs</a></li>
-                            <li><a href="#">Services</a></li>
                             <li><a href="{{ path('app_login') }}">Administration</a></li>
                         </ul>
                     </div>
