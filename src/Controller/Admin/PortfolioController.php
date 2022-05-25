@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Project;
 use App\Form\ProjectType;
 use App\Repository\ProjectRepository;
+use App\Repository\TagRepository;
 use App\Security\Voter\ProjectVoter;
 use App\Service\FileUploader;
 use Doctrine\ORM\EntityManagerInterface;
@@ -89,7 +90,7 @@ class PortfolioController extends AbstractController
     {
         // This security check can also be performed
         // using an annotation: @IsGranted("show", subject="project", message="Projects can only be shown to their authors.")
-        $this->denyAccessUnlessGranted(ProjectVoter::SHOW, $project, 'Projects can only be shown to their authors.');
+        $this->denyAccessUnlessGranted(ProjectVoter::SHOW, $project, 'Les projets ne peuvent être mis à jour que par leur auteurs');
 
         return $this->render('admin/portfolio/show.html.twig', [
             'project' => $project,
@@ -115,7 +116,7 @@ class PortfolioController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->saveFiles($form, $project,$fileUploader);
             $entityManager->flush();
-            $this->addFlash('success', 'project.updated_successfully');
+            $this->addFlash('success', 'Le projet a été mis à jour avec succès');
             return $this->redirectToRoute('admin_project_edit', ['id' => $project->getId()]);
         }
 
@@ -170,5 +171,23 @@ class PortfolioController extends AbstractController
             $illustrationImageName = $fileUploader->upload($illustrationImage);
             $project->setIllustrativeImageName($illustrationImageName);
         }
+    }
+
+    /**
+     * @Route("/", defaults={"page": "1", "_format"="html"}, methods="GET", name="blog_index")
+     * @Route("/rss.xml", defaults={"page": "1", "_format"="xml"}, methods="GET", name="blog_rss")
+     * @Route("/page/{page<[1-9]\d*>}", defaults={"_format"="html"}, methods="GET", name="blog_index_paginated")
+     */
+    public function project(Request $request, int $page, string $_format, ProjectRepository $projectRepository, TagRepository $tagRepository): Response
+    {
+        $tag = null;
+        if ($request->query->has('tag')) {
+            $tag = $tagRepository->findOneBy(['name' => $request->query->get('tag')]);
+        }
+        $latestPosts = $projectRepository->findLatest($page, $tag);
+        return $this->render('blog/index.'.$_format.'.twig', [
+            'paginator' => $latestPosts,
+            'tagName' => $tag ? $tag->getName() : null,
+        ]);
     }
 }

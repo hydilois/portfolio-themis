@@ -105,6 +105,7 @@ HELP
             return [
                 $user->getId(),
                 $user->getFullName(),
+                $user->getPseudo(),
                 $user->getEmail(),
                 implode(', ', $user->getRoles()),
             ];

@@ -34,9 +34,9 @@ class ChangePasswordType extends AbstractType
         $builder
             ->add('currentPassword', PasswordType::class, [
                 'constraints' => [
-                    new UserPassword(),
+                    new UserPassword(null, "Cette valeur doit être le mot de passe de l'utilisateur connecté"),
                 ],
-                'label' => 'label.current_password',
+                'label' => 'Mot de passe actuel',
                 'attr' => [
                     'autocomplete' => 'off',
                 ],
@@ -55,7 +55,7 @@ class ChangePasswordType extends AbstractType
                 ],
                 'second_options' => [
                     'label' => 'Confirmer le nouveau mot de passe',
-                ],
+                ]
             ]);
     }
 }

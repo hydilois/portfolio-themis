@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * Controller used to manage current user.
  *
- * @Route("/profile")
+ * @Route("/admin/profile")
  * @IsGranted("ROLE_USER")
  *
  * @author Romain Monteil <monteil.romain@gmail.com>
@@ -38,7 +38,7 @@ class UserController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            $this->addFlash('success', 'user.updated_successfully');
+            $this->addFlash('success', "Les informations de l'utilisateur ont été mis à jour avec succès");
 
             return $this->redirectToRoute('user_edit');
         }
@@ -67,7 +67,7 @@ class UserController extends AbstractController
             $user->setPassword($hasher->hashPassword($user, $form->get('newPassword')->getData()));
             $entityManager->flush();
 
-            return $this->redirectToRoute('security_logout');
+            return $this->redirectToRoute('app_logout');
         }
 
         return $this->render('user/change_password.html.twig', [

@@ -2,33 +2,36 @@
   "entrypoints": {
     "app": {
       "js": [
-        "/build/runtime.725dd7e0.js",
-        "/build/113.0d552713.js",
-        "/build/121.d13d16e6.js",
-        "/build/app.4b08540a.js"
+        "http://localhost:8080/build/runtime.js",
+        "http://localhost:8080/build/vendors-node_modules_webpack-dev-server_client_index_js_protocol_ws_3A_hostname_localhost_por-f86214.js",
+        "http://localhost:8080/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ob-dcdf78.js",
+        "http://localhost:8080/build/vendors-node_modules_core-js_modules_es_array_for-each_js-node_modules_core-js_modules_es_arr-24c67c.js",
+        "http://localhost:8080/build/app.js"
       ],
       "css": [
-        "/build/app.c8461eb1.css"
+        "http://localhost:8080/build/app.css"
       ]
     },
     "admin": {
       "js": [
-        "/build/runtime.725dd7e0.js",
-        "/build/755.5a8586e9.js",
-        "/build/113.0d552713.js",
-        "/build/110.44e99363.js",
-        "/build/admin.121c93e9.js"
+        "http://localhost:8080/build/runtime.js",
+        "http://localhost:8080/build/vendors-node_modules_webpack-dev-server_client_index_js_protocol_ws_3A_hostname_localhost_por-f86214.js",
+        "http://localhost:8080/build/vendors-node_modules_jquery_dist_jquery_js.js",
+        "http://localhost:8080/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ob-dcdf78.js",
+        "http://localhost:8080/build/vendors-node_modules_bootstrap-sass_assets_javascripts_bootstrap_alert_js-node_modules_bootst-8400fa.js",
+        "http://localhost:8080/build/admin.js"
       ],
       "css": [
-        "/build/110.f293ee30.css",
-        "/build/admin.cffc63d9.css"
+        "http://localhost:8080/build/vendors-node_modules_bootstrap-sass_assets_javascripts_bootstrap_alert_js-node_modules_bootst-8400fa.css",
+        "http://localhost:8080/build/admin.css"
       ]
     },
     "login": {
       "js": [
-        "/build/runtime.725dd7e0.js",
-        "/build/755.5a8586e9.js",
-        "/build/login.6b6b5d56.js"
+        "http://localhost:8080/build/runtime.js",
+        "http://localhost:8080/build/vendors-node_modules_webpack-dev-server_client_index_js_protocol_ws_3A_hostname_localhost_por-f86214.js",
+        "http://localhost:8080/build/vendors-node_modules_jquery_dist_jquery_js.js",
+        "http://localhost:8080/build/login.js"
       ]
     }
   }

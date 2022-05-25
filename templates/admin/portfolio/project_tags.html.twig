@@ -1,0 +1,11 @@
+{% if not project.tags.empty %}
+    <p class="post-tags">
+        {% for tag in project.tags %}
+            <a href="#"
+               class="label label-{{ tag.name == app.request.query.get('tag') ? 'success' : 'default' }}"
+            >
+                <i class="fa fa-tag"></i> {{ tag.name }}
+            </a>
+        {% endfor %}
+    </p>
+{% endif %}
