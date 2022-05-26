@@ -177,6 +177,12 @@ class PortfolioController extends AbstractController
      * @Route("/", defaults={"page": "1", "_format"="html"}, methods="GET", name="blog_index")
      * @Route("/rss.xml", defaults={"page": "1", "_format"="xml"}, methods="GET", name="blog_rss")
      * @Route("/page/{page<[1-9]\d*>}", defaults={"_format"="html"}, methods="GET", name="blog_index_paginated")
+     * @param Request $request
+     * @param int $page
+     * @param string $_format
+     * @param ProjectRepository $projectRepository
+     * @param TagRepository $tagRepository
+     * @return Response
      */
     public function project(Request $request, int $page, string $_format, ProjectRepository $projectRepository, TagRepository $tagRepository): Response
     {

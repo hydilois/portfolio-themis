@@ -3,7 +3,15 @@
 {% block main %}
     <h1>Ajouter un projet</h1>
     {{ form_start(form) }}
-        {{ form_row(form.title) }}
+    <div class="row">
+        <div class="col-md-5">
+            {{ form_row(form.title) }}
+        </div>
+        <div class="col-md-7">
+            {{ form_row(form.website) }}
+        </div>
+
+    </div>
     <div class="row">
         <div class="col-md-6">
             {{ form_row(form.guardImageName) }}
@@ -29,7 +37,7 @@
     <div class="avatar-upload">
         <div class="avatar-preview">
             <div id="guardImagePreview"
-                 style="background-image: url({{ asset('assets/images/portfolio/img-1.jpg') }});">
+                 style="background-image: url({{ asset('assets/images/portfolio/sample_guard_project.jpg') }});">
             </div>
         </div>
     </div>
@@ -37,7 +45,7 @@
     <div class="avatar-upload">
         <div class="avatar-preview_1">
             <div id="illustrationImagePreview"
-                 style="background-image: url({{ asset('assets/images/breadcrumb/img-3.jpg') }});">
+                 style="background-image: url({{ asset('assets/images/breadcrumb/image_illustration.jpg') }});">
             </div>
         </div>
     </div>

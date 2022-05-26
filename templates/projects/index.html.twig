@@ -20,7 +20,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="page-banner-img">
-                        <img src="{{ asset('assets/images/breadcrumb/img-3.jpg') }}" alt="">
+                        <img src="{{ asset('assets/img/image_de_garde_projets.jpg') }}" alt="">
                     </div>
                 </div>
             </div>
@@ -56,8 +56,8 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 cat-1 portfolio-column {% for tagSlug in project.tags%}{{ tagSlug.slug }} {% endfor %}">
                         <div class="portfolio-item portfolio-style-one mb-50 wow fadeInUp" data-wow-delay=".10s">
                             <div class="img-holder">
-                                <img src="{{ asset('uploads/projects/' ~ project.guardImageName) }}" alt="Img">
-                                <a href="{{ asset('uploads/projects/' ~ project.guardImageName) }}" class="portfolio-hover img-popup">
+                                <img src="{% if project.guardImageName %}{{ asset('uploads/projects/' ~ project.guardImageName) }}{% else %}{{ asset('assets/images/portfolio/sample_guard_project.jpg') }}{% endif %}" alt="{{ project }}">
+                                <a href="{{ asset('uploads/prodetajects/' ~ project.guardImageName) }}" class="portfolio-hover img-popup">
                                     <div class="hover-content">
                                         <i class="far fa-plus"></i>
                                     </div>
