@@ -43,7 +43,7 @@ class DefaultController extends AbstractController
             $manager->flush();
             $this->addFlash('success', "Votre message a été envoyé avec succès.");
         }
-        $this->addFlash('success', "Votre message a été envoyé avec succès.");
+        //$this->addFlash('success', "Votre message a été envoyé avec succès.");
 
         return $this->render('home/index.html.twig', [
             'active_link' => 'home',
