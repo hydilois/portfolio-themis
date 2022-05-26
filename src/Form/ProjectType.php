@@ -49,7 +49,16 @@ class ProjectType extends AbstractType
                 'required' => false,
                 'mapped' => false,
                 'attr' => ['class' => 'form-control'],
-                'constraints' => $this->vichOptions(370, 370, 370, 370)
+                'constraints' => [
+                    new Image([
+                        'maxSize' => '2M',
+                        'mimeTypes' => [
+                            'image/jpeg',
+                            'image/png',
+                            'image/jpg',
+                        ]
+                    ])
+                ]
             ])
             ->add('illustrativeImageName', FileType::class, [
                 'label' => "Image Illustrative",
@@ -57,7 +66,16 @@ class ProjectType extends AbstractType
                 'required' => false,
                 'mapped' => false,
                 'attr' => ['class' => 'form-control'],
-                'constraints' => $this->vichOptions(405, 405, 670, 670)
+                'constraints' => [
+                    new Image([
+                        'maxSize' => '2M',
+                        'mimeTypes' => [
+                            'image/jpeg',
+                            'image/png',
+                            'image/jpg',
+                        ]
+                    ])
+                ]
             ])
             ->add('content', null, [
                 'attr' => ['rows' => 20],
